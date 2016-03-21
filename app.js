@@ -1,8 +1,7 @@
 	'use strict';
-define(['angular','angularRoute','servicemodule','controllers','firstScreen','aboutController','homeController','helpController','bbbbController','ccccController','myconstant1','myfactory2','myprovider1','myprovider2','myservice1','myservice2','myfactory1','myconstant2','myvalue1','myvalue2','directivemodule','mydirective1','mydirective2'],function(angular,angularRoute,servicemodule,controllers,firstScreen,aboutController,homeController,helpController,bbbbController,ccccController,myconstant1,myfactory2,myprovider1,myprovider2,myservice1,myservice2,myfactory1,myconstant2,myvalue1,myvalue2,directivemodule,mydirective1,mydirective2){
+define(['angular', 'directiveModule', 'formatDirective'],function(angular, directiveModule, formatDirective){
 	
-	angular.module('directiveModule', []);
-	var app = angular.module('app',['directiveModule']);
+	var app = angular.module('app',['directiveModule', 'formatDirective']);
 	
 	
 	app.init = function(){	

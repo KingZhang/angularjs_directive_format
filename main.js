@@ -4,7 +4,7 @@ require.config({
 		'angular' :'libs/angular' ,
 		'app' :'app' ,
 		'directiveModule' : 'directives/directiveModule',
-		'formatDirective': 'formatDirective'
+		'formatDirective': 'directives/formatDirective'
 	},
 	shim :{
 		'app' : { 

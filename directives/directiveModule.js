@@ -1,4 +1,4 @@
 define(function(){
-	var directivemodule = angular.module('directivemodule',[]);
-	return directivemodule;
+	var directiveModule = angular.module('directiveModule',[]);
+	return directiveModule;
 });

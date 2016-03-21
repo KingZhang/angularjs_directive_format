@@ -122,25 +122,26 @@ define(['angular', 'directiveModule'],
             return this.value === this.value ;
         }
 
-        directiveModule.directives('format',
-            function() {
-                return {
-                    require: 'ngModel',
-                    link: function(scope, attrs, ngModel) {
-                        var dataType = attrs.dataType || "integer",
-                            formatPattern = attrs.formatPattern,
-                            value = attrs.value,
-                            returnValue = value,
-                            FormatHandler = ValueFormatStrategy.get(dataType),
-                            formatHandler = new FormatHandler(value, dataType, formatPattern);
+        function formatDirective() {
+            return {
+                require: 'ngModel',
+                link: function(scope, attrs, ngModel) {
+                    var dataType = attrs.dataType || "integer",
+                        formatPattern = attrs.formatPattern,
+                        value = attrs.value,
+                        returnValue = value,
+                        FormatHandler = ValueFormatStrategy.get(dataType),
+                        formatHandler = new FormatHandler(value, dataType, formatPattern);
 
-                            returnValue = formatHandler.format();
+                        returnValue = formatHandler.format();
 
-                            ngModel.$setModelValue(returnValue);
+                        ngModel.$setModelValue(returnValue);
 
-                    }
                 }
-            })
+            }
+        }
+
+        directiveModule.directive('format', formatDirective);
 
     }
 );
