@@ -4,15 +4,13 @@
 	<meta charset="UTF-8">
 	<title>Document</title>
 </head>
-<body ng-app="demoAPP">
-	
+<body>
+	<div class ='demoAPP'>
+		<span ng-format  value="1234.1234" data-type="price" format-patern="#,##0,00##"></span>
+	</div>
 
 
 	
 </body>
-<script src="libs/angular.js"></script>
-<script src="libs/require.js"></script>
-<script src="demoAPP.js"></script>
-<script src="controller.js"></script>
-<script src="directives/directives.js"></script>
+<script src='libs/require.js' data-main='main.js'></script>
 </html>
