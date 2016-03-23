@@ -1,7 +1,7 @@
 	'use strict';
 define(['angular', 'directiveModule', 'formatDirective'],function(angular, directiveModule, formatDirective){
 	
-	var app = angular.module('app',['directiveModule', 'formatDirective']);
+	var app = angular.module('app',['directiveModule']);
 	
 	
 	app.init = function(){	

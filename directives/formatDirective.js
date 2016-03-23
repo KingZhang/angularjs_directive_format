@@ -91,12 +91,8 @@ define(['angular', 'directiveModule'],
             ValueFormatStrategy.apply(this, Array.prototype.slice.call(arguments, 0));
         }
 
-        IntegerFormat.prototype.getValue = function () {
+        IntegerFormat.prototype.getValue = function (value) {
             return value  * 1;
-        }
-
-        IntegerFormat.prototype.valuesValidate = function() {
-            return value * 1;
         }
 
         IntegerFormat.prototype.valuesValidate = function() {
@@ -124,8 +120,8 @@ define(['angular', 'directiveModule'],
 
         function formatDirective() {
             return {
-                require: 'ngModel',
-                link: function(scope, attrs, ngModel) {
+                require: '?ngModel',
+                link: function(scope, element, attrs, ngModel) {
                     var dataType = attrs.dataType || "integer",
                         formatPattern = attrs.formatPattern,
                         value = attrs.value,
@@ -135,13 +131,13 @@ define(['angular', 'directiveModule'],
 
                         returnValue = formatHandler.format();
 
-                        ngModel.$setModelValue(returnValue);
+                        element.html(returnValue);
 
                 }
             }
         }
 
-        directiveModule.directive('format', formatDirective);
+        directiveModule.directive('ngFormat', formatDirective);
 
     }
 );
